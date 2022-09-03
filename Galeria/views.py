@@ -25,7 +25,7 @@ def obra(request):
 def avaluador(request):
     avaluador1 = Avaluador.objects.create(nombre="Mateo Perez", fecha=2022)
     avaluador2 = Avaluador.objects.create(nombre="Rosario Fuentes", fecha=2021)
-    avaluador3 = Avaluador.objects.create(nombre="Naranja, rojo y amarillo", fecha=2012)
+    avaluador3 = Avaluador.objects.create(nombre="Ana Fawk", fecha=2012)
     context = {'avaluador1': avaluador1,
                'avaluador2': avaluador2,
                'avaluador3': avaluador3}
