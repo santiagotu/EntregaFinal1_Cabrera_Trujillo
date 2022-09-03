@@ -1,0 +1,9 @@
+Sabrina hasta el momento he hecho lo siguiente
+Por favor poner los cambios o adiciones al proyecto en este documento
+
+1. Crear el proyecto en Django
+2. Crear la app Galería
+3. Crear carpeta de templates
+4. Crear las 3 clases de los modelos
+5. Crear la base de datos con esas clases de los modelos y hacer las migraciones
+6. Subir a Github hasta este punto
