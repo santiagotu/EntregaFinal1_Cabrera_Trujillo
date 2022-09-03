@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from Galeria.models import Obra, Artista, Avaluador
 
-def home(request):
-    return render(request, "home.html", context={})
+def inicio(request):
+    return render(request, "inicio.html", context={})
 
 def artista(request):
     artista1 = Artista.objects.create(nombre=" Giovanni Paolo Panini", estilo="Pintura neoclásica")
