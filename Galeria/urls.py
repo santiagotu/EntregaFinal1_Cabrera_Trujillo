@@ -5,8 +5,9 @@ from Galeria import views
 urlpatterns = [
     path('admin', admin.site.urls), 
     path('', views.inicio, name="Inicio"),
-    path('artistas', views.artista, name="artista"),
-    path('avaluadores', views.avaluador, name="avaluador"),
-    path('obras', views.obra, name="obra")
+    path('artistas', views.artistas, name="artista"),
+    path('avaluadores', views.avaluadores, name="avaluador"),
+    path('obras', views.obras, name="obra"),
+    path('buscar/', views.buscar),
 
 ]
