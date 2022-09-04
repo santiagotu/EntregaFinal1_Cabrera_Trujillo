@@ -15,13 +15,11 @@ def artista(request):
     return render(request, 'artistas.html', context)
 
 def obra(request):
-    artista1 = Artista.objects.get(nombre=request.artista1)
-    artista2 = Artista.objects.get(nombre=request.artista2)
-    artista3 = Artista.objects.get(nombre=request.artista3)
+    artistas = Artista.objects.get(nombre=request.nombre)
 
-    obra1 = Obra.objects.create(nombre="King Oliver", fecha="1958-01-01", precio=250000, artista=artista1)
-    obra2 = Obra.objects.create(nombre="Número 16", fecha="1949-01-01", precio=32000000, artista=artista2)
-    obra3 = Obra.objects.create(nombre="Naranja, rojo y amarillo", fecha="1961-01-01", precio=86500000, artista=artista3)
+    obra1 = Obra.objects.create(nombre="King Oliver", fecha="1958-01-01", precio=250000, artistas=request.nombre)
+    obra2 = Obra.objects.create(nombre="Número 16", fecha="1949-01-01", precio=32000000, artistas=request.nombre)
+    obra3 = Obra.objects.create(nombre="Naranja, rojo y amarillo", fecha="1961-01-01", precio=86500000, artistas=request.nombre)
     
     context = {'obra1': obra1,
                'obra2': obra2,

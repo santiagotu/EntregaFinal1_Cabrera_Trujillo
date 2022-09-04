@@ -1,13 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
-from Galeria.views import inicio, artista, avaluador, obra
+from Galeria import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls), 
-    path('inicio/', inicio, name="inicio"),
-    path('artistas/', artista, name="artista"),
-    path('avaluadores/', avaluador, name="avaluador"),
-    path('obras/', obra, name="obra"),
-    #path('Galeria/', include('Galeria.urls')),
+    path('admin', admin.site.urls), 
+    path('', views.inicio, name="Inicio"),
+    path('artistas', views.artista, name="artista"),
+    path('avaluadores', views.avaluador, name="avaluador"),
+    path('obras', views.obra, name="obra")
 
 ]
