@@ -10,9 +10,10 @@
 <body>
     <p>Nombre: {{ obra.nombre }}</p>
     <p>Fecha: {{ obra.fecha }}</p>
-    <p>Precio: {{ obra.precio }}</p>     
+    <p>Precio: {{ obra.precio }}</p>  
+    <p>Artista: {{ obra.artista.nombre }}</p>   
     <br>
-    <a href="{% url 'inicio' %}">Volver</a>
+    <a href="inicio.html">Volver al inicio</a>
 </body>
 
 </html>
