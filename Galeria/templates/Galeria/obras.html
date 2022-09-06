@@ -1,15 +1,28 @@
 {% extends 'index.html' %}
 
-    <title>Obras</title>
-</head>
+{% load static %}
 
-<body>
+{% block obras %}
+
+ <br><br><br>   
+ <p>Avaluadores</p><br>
+<div class="container-fluid">
     <p>Nombre: {{ obra.nombre }}</p>
     <p>Fecha: {{ obra.fecha }}</p>
     <p>Precio: {{ obra.precio }}</p>  
     <p>Artista: {{ obra.artista.nombre }}</p>   
     <br>
-    <a href="{% url 'inicio' %}">Volver</a>
-</body>
+    <a href="{% url 'inicio' %}">Volver</a> 
+<br><br>
 
-</html>
+<p>Registrar Obras</p>
+        <form action="" method="POST">{% csrf_token %}            
+            <table>    
+                {{ miFormulario.as_table }}  
+                </table>
+            <input type="submit", value="Enviar">
+    
+        </form>
+
+</div>
+{% endblock %}

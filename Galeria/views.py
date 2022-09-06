@@ -10,7 +10,7 @@ def obras(request):
       return render(request, "Galeria/obras.html")	
 
 def artista(request):
-      artista = Artista(nombre=" Giovanni Paolo Panini", estilo="Pintura neoclásica")
+      artista = Artista(nombre="Giovanni Paolo Panini", estilo="Pintura neoclásica")
       artista1 = Artista.objects.create(nombre="Edvard Munch", estilo="Expresionismo")
       artista2 = Artista.objects.create(nombre="Robert Delaunay", estilo="Abstracción")
       artista.save()

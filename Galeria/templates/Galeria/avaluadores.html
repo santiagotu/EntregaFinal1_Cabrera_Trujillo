@@ -1,13 +1,26 @@
 {% extends 'index.html' %}
 
-    <title>Avaluadores</title>
-</head>
+{% load static %}
 
-<body>
+{% block artistas %}
+
+ <br><br><br>   
+ <p>Artistas</p><br>
+<div class="container-fluid">
     <p>Nombre: {{ avaluador.nombre }}</p> 
     <p>Fecha: {{ avaluador.fecha }}</p>   
     <br>
-    <a href="{% url 'inicio' %}">Volver</a>
-</body>
+    <a href="{% url 'inicio' %}">Volver</a> 
+<br><br>
 
-</html>
+<p>Registrar Artistas</p>
+        <form action="" method="POST">{% csrf_token %}            
+            <table>    
+                {{ miFormulario.as_table }}  
+                </table>
+            <input type="submit", value="Enviar">
+    
+        </form>
+
+</div>
+{% endblock %}
