@@ -2,12 +2,18 @@
 
     <title>Avaluadores</title>
 </head>
+{% block contenido %}
 
-<body>
+<form action="" method="POST">{% csrf_token %}
+    <br><br><br><br><br>
     <p>Nombre: {{ avaluador.nombre }}</p> 
     <p>Fecha: {{ avaluador.fecha }}</p>   
-    <br>
-    <a href="{% url 'inicio' %}">Volver</a>
-</body>
+    <br>    
+    <a href="{% url 'inicio' %}">Volver</a>    
+</form>
 
-</html>
+<p>Registrar Avaluadores<p>
+
+
+
+{% endblock %}
