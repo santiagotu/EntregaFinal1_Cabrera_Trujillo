@@ -56,8 +56,8 @@ ROOT_URLCONF = 'Galeria.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #'DIRS': [BASE_DIR / 'templates'],
-        'DIRS': [],
+       #'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +128,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Para imagenes
 #MEDIA_URL = '/img/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
+

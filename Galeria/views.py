@@ -4,7 +4,7 @@ from Galeria.forms import ArtistaFormulario, AvaluadorFormulario, ObraFormulario
 from Galeria.models import Obra, Artista, Avaluador
 
 def inicio(request):
-    return render(request, "index.html", context={})
+    return render(request, "Galeria/inicio.html", context={})
 	
 def obras(request):
       return render(request, "Galeria/obras.html")	
@@ -17,7 +17,7 @@ def artista(request):
       context = {'artista': artista,
                  'artista1': artista1,
                  'artista2': artista2}
-      return render(request, 'artistas.html', context)
+      return render(request, 'Galeria/artistas.html', context)
 
 def obra(request):
     artistas = Artista.objects.get(nombre=request.nombre)
@@ -29,7 +29,7 @@ def obra(request):
     context = {'obra1': obra1,
                'obra2': obra2,
                'obra3': obra3}
-    return render(request, 'obras.html', context) 
+    return render(request, 'Galeria/obras.html', context) 
 
 def avaluador(request):
     obras = Obra.objects.get(nombre=request.nombre)
@@ -41,7 +41,7 @@ def avaluador(request):
     context = {'avaluador1': avaluador1,
                'avaluador2': avaluador2,
                'avaluador3': avaluador3}
-    return render(request, 'avaluadores.html', context)  
+    return render(request, 'Galeria/avaluadores.html', context)  
 
 #
 #
@@ -53,10 +53,10 @@ def artistas(request):
                   informacion = miFormulario.cleaned_data
                   artista = Artista (nombre=informacion['nombre'], estilo=informacion['estilo']) 
                   artista.save()
-                  return render(request, "inicio.html") 
+                  return render(request, "Galeria/inicio.html") 
       else: 
             miFormulario= ArtistaFormulario()
-      return render(request, "artistas.html", {"miFormulario":miFormulario})    
+      return render(request, "Galeria/artistas.html", {"miFormulario":miFormulario})    
 
 def obra(request):
       if request.method == 'POST':
@@ -66,10 +66,10 @@ def obra(request):
                   informacion = miFormulario.cleaned_data
                   obra = Obra (nombre=informacion['nombre'], fecha=informacion['fecha'], precio=informacion['precio'], artista=informacion['artista.nombre']) 
                   obra.save()
-                  return render(request, "AppCoder/inicio.html") 
+                  return render(request, "Galeria/inicio.html") 
       else: 
             miFormulario= ObraFormulario()
-      return render(request, "obras.html", {"miFormulario":miFormulario})   
+      return render(request, "Galeria/obras.html", {"miFormulario":miFormulario})   
 
 def avaluadores(request):
       if request.method == 'POST':
@@ -79,17 +79,17 @@ def avaluadores(request):
                   informacion = miFormulario.cleaned_data
                   avaluador = Avaluador (nombre=informacion['nombre'], fecha=informacion['fecha'], precio=informacion['precio']) 
                   avaluador.save()
-                  return render(request, "inicio.html") 
+                  return render(request, "Galeria/inicio.html") 
       else: 
             miFormulario= AvaluadorFormulario()
-      return render(request, "avaluadores.html", {"miFormulario":miFormulario})    
+      return render(request, "Galeria/avaluadores.html", {"miFormulario":miFormulario})    
 
 def buscar(request):
       if  request.GET["estilo"]:
 	      #respuesta = f"Estoy buscando el estilo: {request.GET['estilo'] }" 
             estilo = request.GET['estilo'] 
             artistas = Artista.objects.filter(estilo__icontains=estilo)
-            return render(request, "AppCoder/inicio.html", {"Artista":artista, "estilo":estilo})
+            return render(request, "Galeria/inicio.html", {"Artista":artista, "estilo":estilo})
       else:
             respuesta = "No enviaste datos"
             return HTTPResponse(respuesta)
