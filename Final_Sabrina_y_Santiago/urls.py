@@ -3,9 +3,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    #path('inicio/', admin.site.urls),
-    path('', lambda req: redirect('inicio')),
-    path('Galeria/', include('Galeria.urls')),
+    path('admin/', admin.site.urls),
+    #path('', lambda req: redirect('inicio')),
+    path('', include('Galeria.urls')),
 
 ]
 

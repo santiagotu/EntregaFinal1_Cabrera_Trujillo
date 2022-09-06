@@ -1,17 +1,9 @@
 {% extends 'index.html' %}
 
-  <title>Galeria de Arte</title>
+  {% load static %}
 
+  {% block contenido %}
         <h1>Galeria de arte</h1>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-            <li><a href="artistas">Artistas</a></li>
-            <li><a href="obras">Obras</a></li>
-            <li><a href="avaluadores">Avaluadores</a></li>
-        </ul>
-      </nav><!-- .navbar -->
-
 
     <div class="page-header d-flex align-items-center">
       <div class="container position-relative">
@@ -25,7 +17,7 @@
         </div>
       </div>
     </div><!-- End Page Header -->
-
+{% endblock contenido %}
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
       <div class="container-fluid">
