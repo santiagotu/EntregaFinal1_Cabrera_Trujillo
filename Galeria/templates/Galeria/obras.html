@@ -1,4 +1,10 @@
 {% extends 'index.html' %}
+<<<<<<< HEAD
+=======
+
+    <title>Obras</title>
+</head>
+>>>>>>> 9e4c7a09715f87ce07c933d3d5171a0a283a5429
 
 {% load static %}
 
@@ -12,8 +18,13 @@
     <p>Precio: {{ obra.precio }}</p>  
     <p>Artista: {{ obra.artista.nombre }}</p>   
     <br>
+<<<<<<< HEAD
     <a href="{% url 'inicio' %}">Volver</a> 
 <br><br>
+=======
+    <a href="{% url 'inicio' %}">Volver</a>
+</body>
+>>>>>>> 9e4c7a09715f87ce07c933d3d5171a0a283a5429
 
 <p>Registrar Obras</p>
         <form action="" method="POST">{% csrf_token %}            
