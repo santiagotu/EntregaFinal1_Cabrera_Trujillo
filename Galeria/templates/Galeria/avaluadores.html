@@ -1,47 +1,31 @@
 {% extends 'index.html' %}
-<<<<<<< HEAD
 
-{% load static %}
+<title>Avaluadores</title>
 
-{% block artistas %}
-
- <br><br><br>   
- <p>Artistas</p><br>
-<div class="container-fluid">
-    <p>Nombre: {{ avaluador.nombre }}</p> 
-    <p>Fecha: {{ avaluador.fecha }}</p>   
-    <br>
-    <a href="{% url 'inicio' %}">Volver</a> 
-<br><br>
-
-<p>Registrar Artistas</p>
-        <form action="" method="POST">{% csrf_token %}            
-            <table>    
-                {{ miFormulario.as_table }}  
-                </table>
-            <input type="submit", value="Enviar">
-    
-        </form>
-
-</div>
-{% endblock %}
-=======
-
-    <title>Avaluadores</title>
-</head>
 {% block contenido %}
 
-<form action="" method="POST">{% csrf_token %}
-    <br><br><br><br><br>
-    <p>Nombre: {{ avaluador.nombre }}</p> 
-    <p>Fecha: {{ avaluador.fecha }}</p>   
-    <br>    
-    <a href="{% url 'inicio' %}">Volver</a>    
-</form>
+<br><br><br><br>
+<h3>Avaluadores</h3>
+<hr>
+{% for avaluador in avaluadores %}
+<div class="container-fluid">
+    <li>{{avaluador}}</li>
+    <p>Nombre: <i>{{ avaluador.nombre }}</i></p>
+    <p>Fecha: <i>{{ avaluador.fecha }}</i></p>
+    <p>prueba</p>
+    <hr>
+{% endfor %}
+</div>
 
-<p>Registrar Avaluadores<p>
+    <h4>Registrar Avaluadores</h4>
+    <form action="" method="POST">{% csrf_token %}
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+        <input type="submit" , value="Enviar">
 
-
+    </form>
+    <br>
+    <a href="{% url 'inicio' %}">Volver</a>
 
 {% endblock %}
->>>>>>> 9e4c7a09715f87ce07c933d3d5171a0a283a5429

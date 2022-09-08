@@ -1,41 +1,39 @@
 {% extends 'index.html' %}
-<<<<<<< HEAD
 
-{% load static %}
-=======
+<title>Artistas</title>
 
-    <title>Artistas</title>
-</head>
+{% block contenido %}
 
-<body>
-    <p>Nombre: {{ artista.nombre }}</p>
-    <p>Estilo: {{ artista.estilo }}</p>
-    <br>    
-    <a href="{% url 'inicio' %}">Volver</a>    
-</body>
->>>>>>> 9e4c7a09715f87ce07c933d3d5171a0a283a5429
+<br><br><br>
+<hr>
+<h2>Artistas</h2>
+<hr>
 
-{% block artistas %}
+{% for artista in artistas %}
+<div class="container-fluid">
+    <p>Nombre: <i>{{ artista.nombre }}</i></p>
+    <p>Estilo: <i>{{ artista.estilo }}</i></p>
+    <hr>
+{% endfor %}
 
- <br><br><br>   
- <p>Artistas</p><br>
-<div class="container-fluid">  
-
-<p>Nombre: <i>{{ artista.nombre }}</i></p>
-<p>Estilo: <i>{{ artista.estilo }}</i></p>
-
-<br>
-<a href="{% url 'inicio' %}">Volver</a> 
-<br><br>
-
-<p>Registrar Artistas</p>
-        <form action="" method="POST">{% csrf_token %}            
-            <table>    
-                {{ miFormulario.as_table }}  
-                </table>
-            <input type="submit", value="Enviar">
-    
-        </form>
-
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active text-center font-weight-bold">Listado de Artistas</li>
+        {% for artista in artistas %}
+        <li class="list-group-item">{{ forloop.counter }}. {{ artista.nombre }}</li>
+        {% endfor %}
+    </ul>
 </div>
+
+    <h4>Registrar Artistas</h4>
+    <form action="" method="POST">{% csrf_token %}
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+        <input type="submit" , value="Enviar">
+    </form>
+    <br>
+    <a href="{% url 'inicio' %}">Volver</a>
+</div>
+
 {% endblock %}
