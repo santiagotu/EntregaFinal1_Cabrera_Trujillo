@@ -13,13 +13,9 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <nav id="navbar" class="navbar">
-    <ul>
-        <li><a href="artistas">Artistas</a></li>
-        <li><a href="obras">Obras</a></li>
-        <li><a href="avaluadores">Avaluadores</a></li>
-    </ul>
-  </nav><!-- .navbar -->
+  
+  {% block contenido %}
+  {% endblock %}
   
   <!-- Favicons -->
   <link href="{% static 'img/favicon.png' %}" rel="icon"/>
@@ -59,7 +55,7 @@
           <li><a href="avaluadores">Avaluadores</a></li>
       </ul>
     </nav><!-- .navbar -->
-    
+
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
@@ -80,8 +76,6 @@
     
   </header><!-- End Header -->
 
-{% block inicio %}
-{% endblock inicio %}
 <!-- ======= Gallery Section ======= -->
 <section id="gallery" class="gallery">
 <div class="container-fluid">
