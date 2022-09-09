@@ -4,13 +4,15 @@ Grupo: Sabrina Cabrera y Santiago Trujillo Uribe.
 
 Instalación: 
 
-1. es crear la base de datos ejecutando:
+1. Crear la base de datos ejecutando:
 
->	python manage.py migrate
+	>	python manage.py migrate
 
->	python manage.py makemigrations
+	>	python manage.py makemigrations
 
-2. Para lanzar el servidor web se debe ejecutar: python manage.py runserver
+2. Lanzar el servidor web ejecutando:
+
+	> python manage.py runserver
 
 3. Levantado el sitio se debe entrar a la URL generada en la terminal, por defecto: http://127.0.0.1:8000/
 
@@ -30,3 +32,4 @@ Video de navegación de la web:
 * Login
 * Avatar
 * Cambio de contraseña
+
