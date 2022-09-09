@@ -7,15 +7,17 @@
 <br><br><br><br>
 <h3>Avaluadores</h3>
 <hr>
-{% for avaluador in avaluadores %}
 <div class="container-fluid">
-    <li>{{avaluador}}</li>
-    <p>Nombre: <i>{{ avaluador.nombre }}</i></p>
-    <p>Fecha: <i>{{ avaluador.fecha }}</i></p>
-    <p>prueba</p>
-    <hr>
-{% endfor %}
+    <ul class="list-group">
+        <li class="list-group-item active text-center font-weight-bold">Listado de Avaluadores</li>
+        {% for avaluador in avaluadores_list %}
+        <li class="list-group-item">{{ forloop.counter }}. <b>Nombre:</b> {{ avaluador.nombre }}. 
+            <b>Fecha:</b>: {{ avaluador.fecha }}
+        </li>
+        {% endfor %}
+    </ul>
 </div>
+<hr>
 
     <h4>Registrar Avaluadores</h4>
     <form action="" method="POST">{% csrf_token %}

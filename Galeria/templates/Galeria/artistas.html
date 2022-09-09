@@ -8,32 +8,25 @@
 <hr>
 <h2>Artistas</h2>
 <hr>
-
-{% for artista in artistas %}
-<div class="container-fluid">
-    <p>Nombre: <i>{{ artista.nombre }}</i></p>
-    <p>Estilo: <i>{{ artista.estilo }}</i></p>
-    <hr>
-{% endfor %}
-
 <div class="container-fluid">
     <ul class="list-group">
         <li class="list-group-item active text-center font-weight-bold">Listado de Artistas</li>
-        {% for artista in artistas %}
+        {% for artista in artistas_list %}
         <li class="list-group-item">{{ forloop.counter }}. {{ artista.nombre }}</li>
         {% endfor %}
     </ul>
 </div>
+<hr>
 
-    <h4>Registrar Artistas</h4>
-    <form action="" method="POST">{% csrf_token %}
-        <table>
-            {{ miFormulario.as_table }}
-        </table>
-        <input type="submit" , value="Enviar">
-    </form>
-    <br>
-    <a href="{% url 'inicio' %}">Volver</a>
-</div>
+<h4>Registrar Artistas</h4>
+<form action="" method="POST">{% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+    <input type="submit" , value="Enviar">
+
+</form>
+<br>
+<a href="{% url 'inicio' %}">Volver</a>
 
 {% endblock %}
