@@ -20,8 +20,9 @@ Funcionalidades:
 
 El proyecto es una app de una Galería de Arte en la cual se puede entrar, mediante un homepage, y
 visualizar y realizar AMB de:
-	* Artistas
-	* Obras
+
+	* Artistas	
+	* Obras	
 	* Avaluadores
 
 Imagenes extraidas de: https://www.artres.com/
@@ -32,4 +33,3 @@ Video de navegación de la web:
 * Login
 * Avatar
 * Cambio de contraseña
-
