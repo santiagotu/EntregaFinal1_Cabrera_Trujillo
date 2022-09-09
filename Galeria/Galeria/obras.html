@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+<title>Obras</title>
+
+{% block contenido %}
+
+<br><br><br><br>
+<h3>Obras</h3>
+
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active text-center font-weight-bold">Listado de Obras</li>
+        {% for obra in obras_list %}
+        <li class="list-group-item">{{ forloop.counter }}. Nombre: {{ obra.nombre }}. Precio: {{ obra.precio }}.
+            Artista: {{ obra.artista.nombre }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<hr>
+
+<h4>Registrar Obras</h4>
+<form action="" method="POST">{% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+    <input type="submit" , value="Enviar">
+
+</form>
+<br>
+<a href="{% url 'inicio' %}">Volver</a>
+
+{% endblock %}

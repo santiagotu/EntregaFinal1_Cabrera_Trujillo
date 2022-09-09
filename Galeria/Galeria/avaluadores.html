@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+<title>Avaluadores</title>
+
+{% block contenido %}
+
+<br><br><br><br>
+<h3>Avaluadores</h3>
+<hr>
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active text-center font-weight-bold">Listado de Avaluadores</li>
+        {% for avaluador in avaluadores_list %}
+        <li class="list-group-item">{{ forloop.counter }}. <b>Nombre:</b> {{ avaluador.nombre }}. 
+            <b>Fecha:</b>: {{ avaluador.fecha }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<hr>
+
+    <h4>Registrar Avaluadores</h4>
+    <form action="" method="POST">{% csrf_token %}
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+        <input type="submit" , value="Enviar">
+
+    </form>
+    <br>
+    <a href="{% url 'inicio' %}">Volver</a>
+
+{% endblock %}
