@@ -1,7 +1,9 @@
 Proyecto Python Coderhouse 2022.
+
 Grupo: Sabrina Cabrera y Santiago Trujillo Uribe.
 
 Instalación: 
+
 1. es crear la base de datos ejecutando:
 
 >	python manage.py migrate
@@ -20,12 +22,11 @@ visualizar y realizar AMB de:
 	* Obras
 	* Avaluadores
 
-Imagenes extraidas de: 	
-	https://www.artres.com/
+Imagenes extraidas de: https://www.artres.com/
 
 Video de navegación de la web:	
 
-Registro
-Login
-Avatar
-Cambio de contraseña
+* Registro
+* Login
+* Avatar
+* Cambio de contraseña
