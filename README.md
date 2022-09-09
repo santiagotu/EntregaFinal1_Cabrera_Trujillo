@@ -1,29 +1,31 @@
-ENTREGA INTERMEDIA DEL PROYECTO FINAL
-Formato: Link al repositorio de GitHub con el nombre “Entrega1+Apellido”. 
-Sugerencia: activar comentarios en el archivo y usar como guía el proyecto subido al material complementario de esta clase.
-			También pueden obtener la rama de Git que tiene el mismo material Rama-De-Git.
- 
->>Objetivos Generales:
-Desarrollar una WEB Django con patrón MVT subida a Github.
+Proyecto Python Coderhouse 2022.
+Grupo: Sabrina Cabrera y Santiago Trujillo Uribe.
 
->>Se debe entregar:
-Link de GitHub con el proyecto totalmente subido a la plataforma.
+Instalación: 
+1. es crear la base de datos ejecutando:
 
-Proyecto Web Django con patrón MVT que incluya:
-	Herencia de HTML.
-	Por lo menos 3 clases en models.
-	Un formulario para insertar datos a todas las clases de tu models.
-	Un formulario para buscar algo en la BD
-	Readme que indique el orden en el que se prueban las cosas y/o donde están las funcionalidades.
+>	python manage.py migrate
 
+>	python manage.py makemigrations
+
+2. Para lanzar el servidor web se debe ejecutar: python manage.py runserver
+
+3. Levantado el sitio se debe entrar a la URL generada en la terminal, por defecto: http://127.0.0.1:8000/
+
+Funcionalidades: 
 
 El proyecto es una app de una Galería de Arte en la cual se puede entrar, mediante un homepage, y
 visualizar y realizar AMB de:
-						Artistas
-						Obras
-						Avaluadores
-
+	* Artistas
+	* Obras
+	* Avaluadores
 
 Imagenes extraidas de: 	
 	https://www.artres.com/
-	
+
+Video de navegación de la web:	
+
+Registro
+Login
+Avatar
+Cambio de contraseña
