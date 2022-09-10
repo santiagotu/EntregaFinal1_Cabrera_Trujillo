@@ -6,7 +6,7 @@ from Galeria.models import Obra, Artista, Avaluador
 def inicio(request):
     return render(request, "Galeria/inicio.html", context={})
 	
-def artista(request):
+def artistas2(request):
       artista = Artista(nombre="Giovanni Paolo Panini", estilo="Pintura neoclásica")
       #artista.save()
       artista1 = Artista.objects.create(nombre="Edvard Munch", estilo="Expresionismo")
@@ -14,10 +14,58 @@ def artista(request):
       artista2 = Artista.objects.create(nombre="Robert Delaunay", estilo="Abstracción")
       #artista2.save()
       artistas_list = Artista.objects.all()
-      context = {'artista': artista,
-                 'artista1': artista1,
-                 'artista2': artista2}
-      return render(request, 'Galeria/artistas.html', {'artistas_list': artistas_list})     
+      context = {'artista': artista, 'artista1': artista1, 'artista2': artista2}
+      return render(request, 'Galeria/artistas2.html', {'artistas_list': artistas_list})     
+
+####################################################################### 
+def artistas(request):
+    """View for artistas page."""
+    # Para buscar si el usuario tiene avatar
+    #try:
+        #avatar = Avatar.objects.get(user=request.user.id)
+        #avatar = avatar.avatar.url
+    #except:
+        #avatar = ''
+
+    # Defino variable conteniendo todos los artistas ordenados de mas nuevo a mas antiguo
+    artistas = Artista.objects.all()
+    artistas_list = Artista.objects.all()
+
+    # Para buscar artistas por estilo
+    style = request.GET.get('estilo')
+    if style:
+        artistas = Artista.objects.filter(style__icontains=style)
+        context = {
+            'title': 'artistas',
+            'style': style,
+            'search': 'Buscar por estilo',
+            'artistas': artistas,
+        }
+        return render(request, 'Galeria/artistas.html', artistas)  
+    
+    else:
+        # Listar todos los artistas
+        context = {
+            'artistas': artistas,
+            'title': 'artistas',
+            'subtitle': '¡El listado completo de nuestros artistas!',
+            'search': 'Buscar por estilo',
+        }
+        return render(request, 'Galeria/artistas.html', {'artistas_list': artistas_list}) 
+#######################################################################        
+""" def artistas_crear(request):
+      if request.method == 'Artista':
+            miFormulario = ArtistaFormulario(request.Artista) 
+            print(miFormulario)
+            if miFormulario.is_valid: 
+                  informacion = miFormulario.cleaned_data
+                  artista = Artista (nombre=informacion['nombre'], estilo=informacion['estilo']) 
+                  #artista.save()
+                  #return render(request, "Galeria/inicio.html") 
+      else: 
+            miFormulario= ArtistaFormulario()
+      return render(request, "Galeria/artistas.html", context)   """
+      
 
 def obras(request):
     artistas = Artista.objects.all()
@@ -34,7 +82,7 @@ def obras(request):
                'obra3': obra3}
     return render(request, 'Galeria/obras.html', {'obras_list': obras_list})
 
-def avaluador(request):
+def avaluadores(request):
     obras = Obra.objects.all()
     
     avaluador1 = Avaluador.objects.create(nombre="Mateo Perez", fecha="2022-01-01", obra=obras[1])
@@ -48,23 +96,11 @@ def avaluador(request):
                'avaluador2': avaluador2,
                'avaluador3': avaluador3}
     return render(request, 'Galeria/avaluadores.html', {'avaluadores_list': avaluadores_list})
-
-def artistas_crear(request):
-      if request.method == 'POST':
-            miFormulario = ArtistaFormulario(request.POST) 
-            print(miFormulario)
-            if miFormulario.is_valid: 
-                  informacion = miFormulario.cleaned_data
-                  artista = Artista (nombre=informacion['nombre'], estilo=informacion['estilo']) 
-                  artista.save()
-                  return render(request, "Galeria/inicio.html") 
-      else: 
-            miFormulario= ArtistaFormulario()
-      return render(request, "Galeria/artistas.html", {"miFormulario":miFormulario})    
+ 
 
 def obras_crear(request):
-      if request.method == 'POST':
-            miFormulario = ObraFormulario(request.POST)
+      if request.method == 'Artista':
+            miFormulario = ObraFormulario(request.Artista)
             print(miFormulario)
             if miFormulario.is_valid: 
                   informacion = miFormulario.cleaned_data
@@ -76,8 +112,8 @@ def obras_crear(request):
       return render(request, "Galeria/obras.html", {"miFormulario":miFormulario})   
 
 def avaluadores_crear(request):
-      if request.method == 'POST':
-            miFormulario = AvaluadorFormulario(request.POST) 
+      if request.method == 'Artista':
+            miFormulario = AvaluadorFormulario(request.Artista) 
             print(miFormulario)
             if miFormulario.is_valid: 
                   informacion = miFormulario.cleaned_data

@@ -8,11 +8,11 @@
 <hr>
 <h2>Artistas</h2>
 <hr>
-<div class="container-fluid">
-    <ul class="list-group">
-        <li class="list-group-item active text-center font-weight-bold">Listado de Artistas</li>
+<div class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artistas</a>
+    <ul class="dropdown-menu">
         {% for artista in artistas_list %}
-        <li class="list-group-item">{{ forloop.counter }}. {{ artista.nombre }}</li>
+        <li><a href="#">{{ forloop.counter }}. {{ artista.nombre }}</li>
         {% endfor %}
     </ul>
 </div>
