@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>Login</title>
+{% endblock title %}
+
+{% block texto_header %}
+    Login
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+
+<div id="login_form">
+    <form action={% url 'login' %} method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button>Loguearse</button>
+    </form>
+</div>
+{% endblock despues_del_header %}
