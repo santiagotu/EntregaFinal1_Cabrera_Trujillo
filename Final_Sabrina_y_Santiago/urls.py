@@ -9,7 +9,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     #path('inicio/', admin.site.urls),
     path('', lambda req: redirect('inicio')),
-    path('Galeria/', include('Galeria.urls')),
+    #path('Galeria/', include('Galeria.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
