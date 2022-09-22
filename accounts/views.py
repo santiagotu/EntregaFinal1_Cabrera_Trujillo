@@ -11,7 +11,6 @@ from django.contrib.auth.views import PasswordChangeView
 # Create your views here.
 
 
-
 def login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
@@ -39,7 +38,7 @@ def register(request):
         form = MyUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'base.html', {})
+            return render(request, 'inicio.html', {})
         else:
             return render(request, 'accounts/register.html', {'form': form})
 
@@ -52,6 +51,7 @@ def perfil(request):
 
     return render(request, 'accounts/perfil.html', {})
 
+
 @login_required
 def editar_perfil(request):
 
@@ -62,10 +62,13 @@ def editar_perfil(request):
         form = MyUserEditForm(request.POST, request.FILES)
         if form.is_valid():
             data = form.cleaned_data
-            user.first_name = data.get('first_name') if data.get('first_name') else user.first_name
-            user.last_name = data.get('last_name') if data.get('last_name') else user.last_name
+            user.first_name = data.get('first_name') if data.get(
+                'first_name') else user.first_name
+            user.last_name = data.get('last_name') if data.get(
+                'last_name') else user.last_name
             user.email = data.get('email') if data.get('email') else user.email
-            mas_datos_usuario.avatar = data.get('avatar') if data.get('avatar') else mas_datos_usuario.avatar
+            mas_datos_usuario.avatar = data.get('avatar') if data.get(
+                'avatar') else mas_datos_usuario.avatar
 
             if data.get('password1') and data.get('password1') == data.get('password2'):
                 user.set_password(data.get('password1'))
