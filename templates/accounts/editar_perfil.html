@@ -3,13 +3,13 @@
 {% block title %}
 <title>Editar Perfil</title>
 {% endblock title %}
-
+<br><br>
 {% block texto_header %}
     Editando perfil del usuario: {{request.user.username}}
 {% endblock texto_header %}
 
 {% block despues_del_header %}
-
+<br><br>
 <p>
     <a href={% url 'cambiar_password' %}> Cambiar password </a>
 </p>

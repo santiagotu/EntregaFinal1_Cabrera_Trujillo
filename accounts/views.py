@@ -7,10 +7,6 @@ from django.contrib.auth.decorators import login_required
 from .models import MasDatosUsuario
 from django.contrib.auth.views import PasswordChangeView
 
-
-# Create your views here.
-
-
 def login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
@@ -38,7 +34,7 @@ def register(request):
         form = MyUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'inicio.html', {})
+            return render(request, 'index.html', {})
         else:
             return render(request, 'accounts/register.html', {'form': form})
 

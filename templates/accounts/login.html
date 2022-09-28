@@ -1,16 +1,16 @@
+{% extends 'index.html' %}
 
+{% load static %}
 
 {% block title %}
 <title>Login</title>
 {% endblock title %}
 
-{% block texto_header %}
-    Login
-{% endblock texto_header %}
-
 {% block despues_del_header %}
-
-<div id="login_form">
+<br><br>
+<div align="center" id="login_form">    
+    <img src="{% static 'img/login.png' %}" class="img-fluid" alt="">
+    
     <form action={% url 'login' %} method="post">
         {% csrf_token %}
         <table>
