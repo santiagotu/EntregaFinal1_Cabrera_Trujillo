@@ -35,10 +35,7 @@
 
     <b>Nombre: </b> {{ avaluador.nombre }}. <b>Fecha: </b>: {{ avaluador.fecha }}. <b>Obra: </b> {{avaluador.obra.nombre}}
     <br />
-    {% if request.user.is_authenticated %}
-    <a href="{% url 'editar_avaluador' avaluador.pk %}">Editar</a>
-    <a href="{% url 'eliminar_avaluador' avaluador.pk %}">Eliminar</a>
-    {% endif %}
+
 
     {% endfor %}
     <hr>
