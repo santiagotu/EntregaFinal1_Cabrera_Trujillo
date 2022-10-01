@@ -1,5 +1,7 @@
 {% extends 'index.html' %}
 
+{% load static %}
+
 <title>Obras</title>
 
 {% block title %}
@@ -30,10 +32,12 @@
     <hr>
 
     {% for obra in obras_list %}
-    {{ forloop.counter }}. {{ obra.nombre }}. {{obra.precio }}. {{obra.artista.nombre }}
+    {{ forloop.counter }}. {{ obra.nombre }}. {{obra.precio }}. {{obra.artista.nombre }}. <img src="{{ obra.imagen.url }}" width=100>
+
     {% endfor %}
     <br />
-    <b>Nombre: </b> {{ obra.nombre }}. <b>Precio: </b> {{ obra.precio }}. <b>Artista: </b>{{ obra.artista.nombre }}
+    <b>Nombre: </b> {{ obra.nombre }}. <b>Precio: </b> {{ obra.precio }}. <b>Artista: </b>{{ obra.artista.nombre }}. <img src="{{ obra.imagen.url }}" width=100>
+
 
     <br />
     {% if request.user.is_authenticated %}

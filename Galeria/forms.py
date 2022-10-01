@@ -21,7 +21,7 @@ class ArtistaFormulario(forms.ModelForm):
 class ObraFormulario(forms.ModelForm):
     class Meta:
         model = Obra
-        fields = ('nombre', 'fecha', 'precio', 'artista')
+        fields = ('nombre', 'fecha', 'precio', 'imagen', 'artista')
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha': DatePickerInput(format='%Y-%m-%d'),
