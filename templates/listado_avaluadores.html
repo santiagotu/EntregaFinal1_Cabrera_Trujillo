@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+
+<title>Avaluadores</title>
+
+{% block title %}
+<title>Listado de Avaluadores</title>
+{% endblock title %}
+
+{% block texto_header %}
+<br>
+<h4>Listado de Avaluadores</h4>
+{% endblock texto_header %}
+
+{% block body %}
+
+<div style="width:800px;">
+    <ul>
+        <br>
+        <p>Buscar Avaluador</p>
+        <form action={% url 'listado_avaluadores' %}>
+            {{form}}
+            <button>Buscar</button>
+        </form>
+    </ul>
+</div>
+<p>
+    {% if object_list %}
+<ul>
+    <h4>Listado de Avaluadores</h4>
+    {% for avaluadores in object_list %}
+    <hr>
+    {% for avaluadores in avaluadores_list %}
+        {{ forloop.counter }}. {{ avaluador.nombre }}. {{avaluador.fecha }}. {{avaluador.obra.nombre}}
+    {% endfor %}
+
+    <b>Nombre: </b> {{ avaluador.nombre }}. <b>Fecha: </b>: {{ avaluador.fecha }}. <b>Obra: </b> {{avaluador.obra.nombre}}
+    <br />
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'editar_avaluador' avaluador.pk %}">Editar</a>
+    <a href="{% url 'eliminar_avaluador' avaluador.pk %}">Eliminar</a>
+    {% endif %}
+
+    {% endfor %}
+    <hr>
+</ul>
+{% else %}
+No se encontraron datos.
+<br>
+{% endif %}
+<div class="bleed-left">
+    <a href="{% url 'crear_avaluadores' %}"> 👉 Crear Avaluador</a>
+    <br>
+    <a href="/listado_avaluadores"> ↩ Volver</a> 
+</div>
+
+{% endblock body %}

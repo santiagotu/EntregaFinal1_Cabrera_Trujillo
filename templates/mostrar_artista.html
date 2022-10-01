@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>{{ artista.nombre }}</title>
+{% endblock title %}
+
+{% block texto_header %}
+    {{ artista.nombre }}
+{% endblock texto_header %}
+
+{% block body %}
+
+<div class="nombre"> <h4>
+    {{ artista.nombre }} </h4>
+</div>
+
+
+<div class="table">
+    <img alt="{{artista.nombre|safe}}" width="800" height="600">
+    <p>{{ artista.estilo|safe }}
+    </p>
+
+</div>

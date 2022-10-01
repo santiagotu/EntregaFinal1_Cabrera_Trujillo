@@ -2,6 +2,8 @@ Proyecto Python Coderhouse 2022.
 
 Grupo: Sabrina Cabrera y Santiago Trujillo Uribe.
 
+Insights del proyecto: https://github.com/santiagotu/EntregaFinal1_Cabrera_Trujillo/graphs/contributors
+
 Instalación: 
 
 1. Crear la base de datos ejecutando:
@@ -25,11 +27,31 @@ visualizar y realizar AMB de:
 	* Obras	
 	* Avaluadores
 
+Contenido de la website:
+
+* Registro:
+	El usuario tiene que ingresar un usuario, un correo y una contraseña.
+	Si no está registrado e intenta logearse, el sistema le avisa que no está registrado.
+
+* Login: 
+	El usuario tiene que ingresar su previamente registrado usuario con la contraseña correcta.
+	Si la contraseña no es correcta, se le avisa.
+
+* Logout: El usuario se desloguea del sistema y se le da un saludo de despedida.
+
+* Cambio de contraseña.
+
+* Perfil: 
+	El usuario puede cambiar sus datos e ingresar un avatar.	
+
+* Inicio: página de presentación, se controla a través del login lo que el usuario puede ver y hacer en la web.
+	Contiene una barra de navegación superior
+
+* ABM de Artistas, Obras y Avaluadores.
+
 Imagenes extraidas de: https://www.artres.com/
+Bootstrap: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
 
 Video de navegación de la web:	
 
-* Registro
-* Login
-* Avatar
-* Cambio de contraseña
+
