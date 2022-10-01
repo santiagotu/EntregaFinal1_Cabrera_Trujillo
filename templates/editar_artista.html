@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+<title>Editar Artista</title>
+{% endblock title %}
+
+{% block texto_header %}
+    Editar Artista
+{% endblock texto_header %}
+
+
+{% block body %}
+<p>
+    <a href={% url 'listado_artistas' %}>Listado de Artistas</a>
+</p>
+
+<div class="form-group">
+    <div style="width:800px;">
+        <form action={% url 'editar_artista' artista.id %} method="artista" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{form.as_p}}
+                {{form.media}}
+            </table>
+            <button>Editar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

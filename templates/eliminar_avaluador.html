@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+<title>Eliminar Artista</title>
+{% endblock title %}
+
+{% block texto_header %}
+    Eliminar Artista
+{% endblock texto_header %}
+
+
+{% block body %}
+<p>
+    <a href={% url 'listado_artistas' %}>Listado de Artistas</a>
+</p>
+
+<div class="form-group">
+    <form action={% url 'eliminar_artista' artista.id %} method="post">
+        {% csrf_token %}
+        ¿Desea eliminar el artista?
+        <button>Confirmar</button>
+    </form>
+</div>
+{% endblock %}

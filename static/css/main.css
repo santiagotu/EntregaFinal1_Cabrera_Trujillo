@@ -35,6 +35,7 @@ body {
   font-family: var(--font-default);
   color: var(--color-default);
   background-color: #000;
+  padding-top: 70px;
 }
 
 a {
@@ -60,7 +61,7 @@ h6 {
 # Sections & Section Header
 --------------------------------------------------------------*/
 .section-header {
-  padding-bottom: 40px;
+  padding-bottom: 10px;
 }
 
 .section-header h2 {
@@ -97,7 +98,7 @@ h6 {
 # Page Header
 --------------------------------------------------------------*/
 .page-header {
-  padding: 120px 0 60px 0;
+  padding: 50px 0 60px 0;
   min-height: 30vh;
   position: relative;
 }
@@ -618,7 +619,6 @@ h6 {
 .about .content h2 {
   font-weight: 700;
   font-size: 24px;
-  color: var(--color-primary);
 }
 
 .about .content ul {
@@ -639,7 +639,6 @@ h6 {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: var(--color-primary);
   line-height: 0;
 }
 

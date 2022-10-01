@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>Crear Artistas</title>
+{% endblock title %}
+
+{% block texto_header %}
+<br>
+<h4>Crear Artistas</h4>
+{% endblock texto_header %}
+
+{% block body %}
+<ul>
+    <br>
+    <div class="container">
+        <div style="width:500px;">
+            <form action={% url 'crear_artistas' %} method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    {{form.as_p}}
+                    {{form.media}}
+                </table>
+                <button>Crear</button>
+            </form>
+            <br>
+            <a href="/listado_artistas"> ↩ Volver</a>
+        </div>
+    </div>
+    </li>
+</ul>
+{% endblock %}

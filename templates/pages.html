@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Paginas</title>
+{% endblock title %}
+
+{% block contenido %}
+<div class="page-header d-flex align-items-center">
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+                <h1>Paginas</h1>
+                <br>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/listado_artistas">Artistas</a></li>
+                <li><a href="/listado_obras">Obras</a></li>
+                <li><a href="/listado_avaluadores">Avaluadores</a></li>
+                <li><a href={% url 'login' %}>Login</a></li>
+                <li><a href={% url 'register' %}>Registro</a></li>
+                <li><a href={% url 'acerca_de_nosotros' %}>Acerca de Nosotros</a></li>
+
+            </div>
+        </div>
+    </div>
+</div><!-- End Page Header -->
+{% endblock %}

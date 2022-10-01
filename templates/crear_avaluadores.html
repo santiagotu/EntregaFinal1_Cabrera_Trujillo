@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>Crear Avaluadores</title>
+{% endblock title %}
+
+{% block texto_header %}
+<br>
+<h4>Crear Avaluadores</h4>
+{% endblock texto_header %}
+
+{% block body %}
+<ul>
+    <br>
+    <div class="container">
+        <div style="width:500px;">
+            <form action={% url 'crear_avaluadores' %} method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    {{form.as_p}}
+                    {{form.media}}
+                </table>
+                <button>Crear</button>
+            </form>
+            <br>
+            <a href="/listado_avaluadores"> ↩ Volver</a>
+        </div>
+    </div>
+    </li>
+</ul>
+{% endblock %}
