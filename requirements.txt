@@ -4,14 +4,15 @@
 #
 #    pip-compile
 #
-# Procedimiento:
-#   pip3 install pipreqs
-#   pip3 install pip-tools
-#   pipreqs --savepath=requirements.in
-#   pip-compile
-#
 asgiref==3.5.2
+    # via django
 django==4.1
-sqlparse==0.4.2
-tzdata==2022.2
-bootstrap-datepicker-plus
+    # via
+    #   -r requirements.in
+    #   django-bootstrap-datepicker-plus
+django-bootstrap-datepicker-plus==4.0.0
+    # via -r requirements.in
+sqlparse==0.4.3
+    # via django
+tzdata==2022.4
+    # via django

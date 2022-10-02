@@ -34,7 +34,7 @@ Contenido de la Website "Galería de Arte" y Funcionalidades:
 * Cambio de contraseña.
 
 * Perfil: 
-	El usuario puede cambiar sus datos e ingresar un avatar.	
+	El usuario puede cambiar sus datos e ingresar un avatar, una descripción y un link.	
 
 * Inicio: página de presentación, se controla a través del login lo que el usuario puede ver y hacer en la web.
 	Contiene una barra de navegación superior.

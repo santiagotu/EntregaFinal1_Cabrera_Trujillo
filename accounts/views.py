@@ -6,7 +6,7 @@ from .forms import MyUserCreationForm, MyUserEditForm
 from django.contrib.auth.decorators import login_required
 from .models import MasDatosUsuario
 from django.contrib.auth.views import PasswordChangeView
-from django.contrib import messages
+
 
 def login(request):
     if request.method == 'POST':
@@ -34,7 +34,7 @@ def register(request):
     if request.method == 'POST':
         form = MyUserCreationForm(request.POST)
         if form.is_valid():
-            form.save()            
+            form.save()
             return render(request, 'inicio.html', {})
         else:
             return render(request, 'accounts/register.html', {'form': form})
@@ -61,11 +61,17 @@ def editar_perfil(request):
             data = form.cleaned_data
             user.first_name = data.get('first_name') if data.get(
                 'first_name') else user.first_name
+
             user.last_name = data.get('last_name') if data.get(
                 'last_name') else user.last_name
             user.email = data.get('email') if data.get('email') else user.email
             mas_datos_usuario.avatar = data.get('avatar') if data.get(
                 'avatar') else mas_datos_usuario.avatar
+
+            mas_datos_usuario.descripcion = data.get('descripcion') if data.get(
+                'descripcion') else mas_datos_usuario.descripcion
+
+            mas_datos_usuario.link = data.get('link') if data.get('link') else mas_datos_usuario.link
 
             if data.get('password1') and data.get('password1') == data.get('password2'):
                 user.set_password(data.get('password1'))
@@ -82,6 +88,8 @@ def editar_perfil(request):
                                    'first_name': user.first_name,
                                    'last_name': user.last_name,
                                    'avatar': mas_datos_usuario.avatar,
+                                   'descripcion': mas_datos_usuario.descripcion,
+                                   'link': mas_datos_usuario.link,
                                    })
 
     return render(request, 'accounts/editar_perfil.html', {'form': form})
