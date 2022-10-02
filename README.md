@@ -52,6 +52,6 @@ Imagenes extraidas de: https://www.artres.com/
 
 Bootstrap: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
 
-Video de navegación de la web:	
+Demo navegación de la web (click en la imagen):
 
-
+[<img src="https://drive.google.com/uc?export=view&id=1P_lztL3Zp8hQVBobfH5vZTIyJfirVlwP" width="50%">](https://youtu.be/iKSrWkep3G4 "Web Galeria Demo")
