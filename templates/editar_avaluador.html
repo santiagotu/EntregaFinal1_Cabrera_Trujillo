@@ -6,18 +6,19 @@
 {% endblock title %}
 
 {% block texto_header %}
-    Editar Avaluador
+<br>
+<h4>Editar Avaluador</h4>
 {% endblock texto_header %}
 
 
 {% block body %}
 <p>
-    <a href={% url 'listado_avaluadors' %}>Listado de Avaluadores</a>
+    <a href={% url 'listado_avaluadores' %}>Listado de Avaluadores</a>
 </p>
 
 <div class="form-group">
     <div style="width:800px;">
-        <form action={% url 'editar_avaluador' avaluador.id %} method="avaluador" enctype="multipart/form-data">
+        <form action="{% url 'editar_avaluador' avaluador.id %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <table>
                 {{form.as_p}}

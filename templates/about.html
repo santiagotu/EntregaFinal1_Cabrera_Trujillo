@@ -11,19 +11,37 @@
 Acerca de Nosotros
 {% endblock texto_header %}
 
+{% block despues_del_header %}
+<br><br>
 
-{% block body %}
-<br><br><br>
-<!-- Sabrina -->
-<div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="dark" data-type="HORIZONTAL"
-    data-vanity="sabrina-cabrera-171681149" data-version="v1"><a class="badge-base__link LI-simple-link"
-        href="https://uy.linkedin.com/in/sabrina-cabrera-171681149?trk=profile-badge">Sabrina Cabrera</a></div>
-<br>        
-<!-- Santiago -->
-<div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="dark" data-type="HORIZONTAL"
-    data-vanity="santiago-trujillo-uribe-01b142152" data-version="v1"><a class="badge-base__link LI-simple-link"
-        href="https://co.linkedin.com/in/santiago-trujillo-uribe-01b142152?trk=profile-badge">Santiago Trujillo</a></div>
+<p style="padding: 0 300px">El proyecto Galería de arte surge para cubrir la necesidad de tener una website en la cual manejar las diferentes
+    obras que la Galería administra.
+    Registramos los artistas, su nombre y estilo artistico.
+    De las obras registramos nombre, precio, artista y una imagen de referencia.
+    Tenemos Avaluadores, los cuales son los empleados de la Galería que avaluan las obras. Registramos su nombre, el
+    nombre de la obra que avaluaron y la fecha en la cual realizaron la
+    avaluación.
+</p>
+<br>
 
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<div align="center" id="wrapper" >
+    <h5 style="font-weight: bold;">Integrantes del equipo</h5>
+    <br>
+    <!-- Sabrina -->
+    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="dark"
+        data-type="HORIZONTAL" data-vanity="sabrina-cabrera-171681149" data-version="v1"><a
+            class="badge-base__link LI-simple-link"
+            href="https://uy.linkedin.com/in/sabrina-cabrera-171681149?trk=profile-badge">Sabrina Cabrera</a></div>
 
-{% endblock %}
+    <!-- Santiago -->
+    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="dark"
+        data-type="HORIZONTAL" data-vanity="santiago-trujillo-uribe-01b142152" data-version="v1"><a
+            class="badge-base__link LI-simple-link"
+            href="https://co.linkedin.com/in/santiago-trujillo-uribe-01b142152?trk=profile-badge">Santiago Trujillo</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async="" defer=""></script>
+
+
+{% endblock despues_del_header %}

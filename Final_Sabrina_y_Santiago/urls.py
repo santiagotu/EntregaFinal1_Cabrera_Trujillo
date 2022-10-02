@@ -6,7 +6,6 @@ from django.urls import path, include
 from django.conf import settings
 from Galeria import views
 from Galeria.views import inicio, acerca_de_nosotros, paginas   
-from accounts.views import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),

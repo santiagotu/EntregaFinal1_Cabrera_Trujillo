@@ -6,7 +6,8 @@
 {% endblock title %}
 
 {% block texto_header %}
-    Editar Artista
+<br>
+<h4>Editar Artista</h4>
 {% endblock texto_header %}
 
 
@@ -17,14 +18,14 @@
 
 <div class="form-group">
     <div style="width:800px;">
-        <form action={% url 'editar_artista' artista.id %} method="artista" enctype="multipart/form-data">
+        <form action="{% url 'editar_artista' artista.id %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <table>
                 {{form.as_p}}
-                {{form.media}}
             </table>
             <button>Editar</button>
         </form>
     </div>
 </div>
 {% endblock %}
+

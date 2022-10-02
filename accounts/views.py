@@ -6,6 +6,7 @@ from .forms import MyUserCreationForm, MyUserEditForm
 from django.contrib.auth.decorators import login_required
 from .models import MasDatosUsuario
 from django.contrib.auth.views import PasswordChangeView
+from django.contrib import messages
 
 def login(request):
     if request.method == 'POST':
@@ -33,8 +34,8 @@ def register(request):
     if request.method == 'POST':
         form = MyUserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return render(request, 'index.html', {})
+            form.save()            
+            return render(request, 'inicio.html', {})
         else:
             return render(request, 'accounts/register.html', {'form': form})
 
