@@ -28,3 +28,5 @@ class MyUserEditForm(forms.Form):
     last_name = forms.CharField(
         label='Apellido', max_length=30, required=False)
     avatar = forms.ImageField(required=False)
+    descripcion = forms.CharField(max_length=250, required=False)    
+    link = forms.URLField(required=False)
