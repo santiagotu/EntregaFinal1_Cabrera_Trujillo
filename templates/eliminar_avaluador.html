@@ -2,23 +2,24 @@
 
 
 {% block title %}
-<title>Eliminar Artista</title>
+<title>Eliminar Avaluador</title>
 {% endblock title %}
 
 {% block texto_header %}
-    Eliminar Artista
+<br>
+<h4>Eliminar Avaluador</h4>
 {% endblock texto_header %}
 
 
 {% block body %}
 <p>
-    <a href={% url 'listado_artistas' %}>Listado de Artistas</a>
+    <a href={% url 'listado_avaluadores' %}>Listado de Avaluadors</a>
 </p>
 
 <div class="form-group">
-    <form action={% url 'eliminar_artista' artista.id %} method="post">
+    <form action={% url 'eliminar_avaluador' avaluador.id %} method="post">
         {% csrf_token %}
-        ¿Desea eliminar el artista?
+        ¿Desea eliminar el avaluador?
         <button>Confirmar</button>
     </form>
 </div>

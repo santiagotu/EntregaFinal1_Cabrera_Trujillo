@@ -7,7 +7,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def inicio(request):
-    ultimos_cinco_artistas = Artista.objects.all().order_by('-id')[:5]
     return render(request, "inicio.html", context={})
 
 
@@ -19,6 +18,7 @@ def paginas(request):
     return render(request, 'pages.html')
 
 ###############################################################################
+
 
 class ListadoArtistas(ListView):
     model = Artista
@@ -52,13 +52,12 @@ class CrearArtista(LoginRequiredMixin, CreateView):
 class EditarArtista(LoginRequiredMixin, UpdateView):
     model = Artista
     form_class = ArtistaFormulario
-    template_name = 'listado_artistas'
     success_url = '/listado_artistas'
-
+    template_name = 'editar_artista.html'
 
 class EliminarArtista(LoginRequiredMixin, DeleteView):
     model = Artista
-    template_name = 'artistas.html'
+    template_name = 'eliminar_artista.html'
     success_url = '/listado_artistas'
 
 
@@ -67,6 +66,7 @@ class MostrarArtista(DetailView):
     template_name = '/mostrar_artista.html'
 
 ###############################################################################
+
 
 class ListadoObras(ListView):
     model = Obra
@@ -100,13 +100,13 @@ class CrearObra(LoginRequiredMixin, CreateView):
 class EditarObra(LoginRequiredMixin, UpdateView):
     model = Obra
     form_class = ObraFormulario
-    template_name = 'listado_obras'
+    template_name = 'editar_obra.html'
     success_url = '/listado_obras'
 
 
 class EliminarObra(LoginRequiredMixin, DeleteView):
     model = Obra
-    template_name = 'obras.html'
+    template_name = 'eliminar_obra.html'
     success_url = '/listado_obras'
 
 
@@ -115,6 +115,7 @@ class MostrarObra(DetailView):
     template_name = 'mostrar_obra.html'
 
 ###############################################################################
+
 
 class ListadoAvaluadores(ListView):
     model = Avaluador
@@ -148,13 +149,13 @@ class CrearAvaluador(LoginRequiredMixin, CreateView):
 class EditarAvaluador(LoginRequiredMixin, UpdateView):
     model = Avaluador
     form_class = AvaluadorFormulario
-    template_name = 'listado_avaluadores'
+    template_name = 'editar_avaluador.html'
     success_url = '/listado_avaluadores'
 
 
 class EliminarAvaluador(LoginRequiredMixin, DeleteView):
     model = Avaluador
-    template_name = 'avaluadores.html'
+    template_name = 'eliminar_avaluador.html'
     success_url = '/listado_avaluadores'
 
 

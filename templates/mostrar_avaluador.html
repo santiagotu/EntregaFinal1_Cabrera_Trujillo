@@ -1,23 +1,24 @@
 {% extends 'index.html' %}
 
 {% block title %}
-<title>{{ artista.nombre }}</title>
+<title>{{ avaluador.nombre }}</title>
 {% endblock title %}
 
 {% block texto_header %}
-    {{ artista.nombre }}
+<br>
+<h4>{{ avaluador.nombre }}</h4>
 {% endblock texto_header %}
 
 {% block body %}
 
 <div class="nombre"> <h4>
-    {{ artista.nombre }} </h4>
+    {{ avaluador.nombre }} </h4>
 </div>
 
 
 <div class="table">
-    <img alt="{{artista.nombre|safe}}" width="800" height="600">
-    <p>{{ artista.estilo|safe }}
+    <img alt="{{avaluador.nombre|safe}}" width="800" height="600">
+    <p>{{ avaluador.fecha|safe }}
     </p>
 
 </div>
