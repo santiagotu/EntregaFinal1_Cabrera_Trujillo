@@ -25,28 +25,27 @@
         </form>
     </ul>
 </div>
-<p>
-    {% if object_list %}
+
+{% if object_list %}
 <ul>
     {% for obra in object_list %}
     <hr>
-
-    {% for obra in obras_list %}
-    {{ forloop.counter }}. {{ obra.nombre }}. {{obra.precio }}. {{obra.artista.nombre }}. <img
-        src="{{ obra.imagen.url }}" width=100>
-
-    {% endfor %}
-    <br />
     <b>Nombre: </b> {{ obra.nombre }}. <b>Precio: </b> {{ obra.precio }}. <b>Artista: </b>{{ obra.artista.nombre }}.
-    <img src="{{ obra.imagen.url }}" width=100>
-    <br />
-    {% if request.user.is_authenticated %}
-    <a href="{% url 'editar_obra' obra.pk %}">Editar</a>
-    <a href="{% url 'eliminar_obra' obra.pk %}">Eliminar</a>
-    {% endif %}
+    <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="gallery-item h-100">
+            <img src="{{ obra.imagen.url }}" class="img-fluid" alt="" width=250>
+            <div class="gallery-links d-flex ">
+                <a href="{{ obra.imagen.url }}" title="{{ obra.nombre }}" class="glightbox preview-link"><i
+                        class="bi bi-arrows-angle-expand"></i></a>
+            </div>
+            <br />
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'editar_obra' obra.pk %}">Editar</a>
+            <a href="{% url 'eliminar_obra' obra.pk %}">Eliminar</a>
+            {% endif %}
 
-    {% endfor %}
-    <hr>
+            {% endfor %}
+            <hr>
 </ul>
 {% else %}
 No se encontraron datos.
